@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aroha Technology</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/w3.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+</head>
+<body>
+	<div class="cotainer">
+		<img src="images/aroha.png" style="height: 60px;width: 120px;">
+					<nav class="navbar navbar-expand-sm bg-dark  navbar-dark">
+						<div class="container row">
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#aroha">
+							    <span class="navbar-toggler-icon"  ></span>
+							</button>
+							<div class="col-md-3 col-lg-3"></div>
+							<div class="collapse navbar-collapse col-md-6 col-lg-6" id="aroha">
+								<div class="container" style="color: #FFFFFF;">
+									<ul class="nav justify-content-end nav-navbar">
+								    <li class="nav-item">
+								      <a class="nav-link" href="index.html">Home</a>
+								    </li>
+								    <li class="nav-item dropdown">
+								      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Products</a>
+								     	<div class="dropdown-menu" >
+						      				<a class="dropdown-item" href="#">Product1</a>
+						      				<a class="dropdown-item" href="#">Product2</a>
+						   				</div>
+									</li>
+								    <li class="nav-item">
+								      <a class="nav-link" href="#">Contact</a>
+								    </li>
+								  </ul>
+								</div>
+							</div>
+							<div class="col-md-3 col-lg-3"></div>
+						</div>
+					</nav>
+	</div><br>
+	<div class="cotainer">
+		<div class="row">
+			<div class="col-md-3 col-lg-3"></div>
+			<div class="col-md-6 col-lg-6">
+		<form class="form" name="myform1" id="myform1" method="post">
+			<center><h1><em>Registration</em></h1></center><br>
+		<input type="text" name="name1" id="name1" placeholder="Full Name" class="form-control" style="height: 50px;" required="required" autocomplete="off" maxlength="16"><br>
+		<input type="text" name="email" id="email" placeholder="Email" class="form-control" style="height: 50px;" required="required" autocomplete="off"><br>
+		<input type="Number" name="phone" id="phone" placeholder="Phone Number" class="form-control" style="height: 50px;" required="required" autocomplete="off" maxlength="10"><br>
+		<input type="date" name="date" id="date" class="form-control" placeholder="Date-Of-Birth" style="height: 50px;"><br>
+			<a href="pag2.html"><button class="btn btn-success" style="width: 80px;height: auto;" onclick="myvalidate();"> SUBMIT</button></a>
+		</form>
+		</div>
+		<div class="col-md-3 col-lg-3"></div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-lg-3"></div>	
+					<div class="col-md-6 col-lg-6">
+						<center><h1><em>Office Address</em></h1></center><br>
+						<i class="fa fa-address-card" style="font-size:20px"></i>
+						<span><em><h4>14, 5th Main, 38th Cross, 38th Cross Rd,</h4> 
+								<h4>5th Block, Jayanagar,</h4> 
+								<h4>Bengaluru, Karnataka 560041</h4></span><br></em>
+						<em><i class='far fa-envelope' style='font-size:20px'></i>&nbsp;&nbsp;<span>suraj.narayan@aroha.co.in</span><br><br>
+						<i class='fas fa-phone' style='font-size:20px'>&nbsp;&nbsp;</i><span>08050445829</span></em>		
+					</div>
+
+					<div class="col-md-3 col-lg-3"></div>	
+				</div>
+				
+			</div><br>
+			<div style="background-color: #AC6009; height: 50px;"><br>
+				<center><a href="www.aroha.co.in">Copyright © 2017 Aroha Technologies Pvt. Ltd</a></center>
+			</div>
+			<script type="text/javascript">
+				function myvalidate()
+				{
+				var fname = document.forms["myform1"]["name1"].value;
+				var f_email = document.forms["myform1"]["email"].value;
+				var f_phone = document.forms["myform1"]["phone"].value;
+				fpos = f_email.indexOf("@");
+				dpos = f_email.lastIndexOf(".");
+				var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;	
+				var m=fname.length;
+				if(m < 4 || m > 16)
+				{
+				alert("Name should be in Length ");
+				document.myform1.name1.focus() ;
+				return false;
+				}
+				if (fpos < 1 || ( dpos - fpos < 2 ))
+				{
+				alert("Please enter correct email ID")
+				document.myform1.email.focus() ;
+				return false;
+				}
+				if(f_phone.match(phoneno))
+				{ 
+					return true; 
+
+				}
+				else
+				{
+				alert("Not a valid Phone Number");
+				return false;
+				 }
+				 
+
+			}
+			
+			</script>
+		
+	</div>
+	<script src="js/jquery.js"></script>
+			<script src="js/popper.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+	</body>
+	</html>
